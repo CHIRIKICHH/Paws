@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Paws.Windows" xmlns:Syncfusion="http://schemas.syncfusion.com/wpf"
         mc:Ignorable="d"
-        Title="ChangeEmployee" Height="570" Width="400">
+        Title="ChangeEmployee" Height="570" Width="420">
     <Grid Width="380">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>

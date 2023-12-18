@@ -72,5 +72,25 @@ namespace Paws.Windows
             PhoneTextBox.Text = "";
             DiscountTextBox.Text = "";
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            using(var context = new ApplicationContext())
+            {
+                while (true)
+                {
+                    string RandomDiscount = new Random().Next(100000000, 999999999).ToString();
+                    if(context.Customers.Any(x => x.DiscountCard.Contains(RandomDiscount)))
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        DiscountTextBox.Text = RandomDiscount;
+                        break;
+                    }
+                }
+            }
+        }
     }
 }

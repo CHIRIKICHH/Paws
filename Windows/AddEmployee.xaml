@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Paws.Windows" xmlns:Syncfusion="http://schemas.syncfusion.com/wpf"
         xmlns:Globalization="clr-namespace:System.Globalization;assembly=System.Runtime" x:Class="Paws.Windows.AddEmployee"
         mc:Ignorable="d"
-        Title="AddEmployee" Height="550" Width="400">
+        Title="AddEmployee" Height="570" Width="420">
     <Grid Width="380">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>

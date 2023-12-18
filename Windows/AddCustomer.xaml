@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Paws.Windows"
         mc:Ignorable="d"
-        Title="AddCustomer" Height="350" Width="400">
-    <Grid Width="380">
+        Title="AddCustomer" Height="370" Width="430">
+    <Grid Width="380" >
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition/>
@@ -43,6 +43,7 @@
             <TextBox Grid.Row="4" Grid.Column="1" x:Name="DiscountTextBox" Width="200" Height="30" />
 
             <Button Grid.Row="7" Grid.Column="1" Content="Додати" Width="120" Height="30" Click="Button_Click"/>
+            <Button Grid.Column="2" Grid.Row="4" Height="35" Content="G" Click="Button_Click_2"/>
             <Button Grid.Row="7" Grid.Column="2" Content="C" Height="30" Click="Button_Click_1"/>
         </Grid>
     </Grid>

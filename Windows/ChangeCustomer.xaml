@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Paws.Windows"
         mc:Ignorable="d"
-        Title="ChangeCustomer" Height="350" Width="400">
+        Title="ChangeCustomer" Height="370" Width="420">
     <Grid Width="380">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
@@ -41,6 +41,7 @@
 
             <TextBlock Grid.Row="4" Text="Номер знижкової карти" Width="80" TextAlignment="Center" Height="50" TextWrapping="Wrap"/>
             <TextBox Grid.Row="4" Grid.Column="1" x:Name="DiscountTextBox" Width="200" Height="30" />
+            <Button Grid.Column="2" Grid.Row="4" Height="35" Content="G" Click="Button_Click_1"/>
 
             <Button Grid.Row="7" Grid.Column="1" Content="Редагувати" Width="120" Height="30" Click="Button_Click"/>
           

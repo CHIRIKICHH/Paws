@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Paws.Windows" xmlns:Syncfusion="http://schemas.syncfusion.com/wpf"
         xmlns:Globalization="clr-namespace:System.Globalization;assembly=System.Runtime" x:Class="Paws.Windows.AddOrder"
         mc:Ignorable="d"
-        Title="AddOrder" Height="580" Width="400">
+        Title="AddOrder" Height="580" Width="420">
     <Grid Width="380">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
@@ -40,7 +40,11 @@
             <!--<Button Grid.Row="1" Grid.Column="2" Content="+" Height="30" Click="Button_Click_1"/>-->
 
             <TextBlock Grid.Row="2" Text="Список товарів" TextAlignment="Center" VerticalAlignment="Center"/>
-            <Syncfusion:ComboBoxAdv Grid.Row="2" Grid.Column="1" x:Name="GoodsList" EnableOKCancel="True" AllowSelectAll="True" AllowMultiSelect="True" Width="200" Height="30" DefaultText="Вибраний: 0" SelectionChanged="GoodsList_SelectionChanged" EnableToken="True"/>
+            <Syncfusion:ComboBoxAdv Grid.Row="2" Grid.Column="1" x:Name="GoodsList" 
+                                    EnableOKCancel="True" AllowSelectAll="True" 
+                                    Width="200" Height="30" DefaultText="Вибраний: 0" 
+                                    SelectionChanged="GoodsList_SelectionChanged" 
+                                    AutoCompleteMode="Suggest" IsEditable="True" IsTextSearchCaseSensitive="True" IsTextSearchEnabled="True"/>
 
             <TextBlock Grid.Row="3" Text="Адрес доставки" Width="90" TextAlignment="Center" Height="30"/>
             <TextBox Grid.Row="3" Grid.Column="1" x:Name="DeliveryAdressTextBox" Width="200" Height="50" TextWrapping="Wrap"/>
