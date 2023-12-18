@@ -17,7 +17,7 @@ namespace Paws
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Host=192.168.30.5;Port=5454;Database=pawsome3;Username=admin;Password=admin");
+            optionsBuilder.UseNpgsql("Host=217.19.212.166;Port=5454;Database=pawsome3;Username=admin;Password=admin");
         }
     }
 }

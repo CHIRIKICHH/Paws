@@ -15,7 +15,19 @@
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <TextBlock Text="Список Товарів" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
-        <Syncfusion:SfDataGrid x:Name="dataGrid" AutoGenerateColumns="True" Grid.Row="1" AllowSorting="True" AllowFiltering="True" CellDoubleTapped="dataGrid_CellDoubleTapped" AllowResizingColumns="True" AllowTriStateSorting="True" ColumnSizer="Auto" />
+        <Syncfusion:SfDataGrid x:Name="dataGrid" Grid.Row="1" 
+                               AllowSorting="True" AllowFiltering="True" 
+                               CellDoubleTapped="dataGrid_CellDoubleTapped" AllowResizingColumns="True" 
+                               AllowTriStateSorting="True" ColumnSizer="Auto" >
+            <Syncfusion:SfDataGrid.Columns>
+                <Syncfusion:GridTextColumn MappingName="Id" HeaderText="ID"/>
+                <Syncfusion:GridTextColumn MappingName="ProductName" HeaderText="Назва товару"/>
+                <Syncfusion:GridTextColumn MappingName="ProductCategory" HeaderText="Категорія"/>
+                <Syncfusion:GridNumericColumn MappingName="Price" HeaderText="Цiна(₴)"/>
+                <Syncfusion:GridTextColumn MappingName="Quantity" HeaderText="Кількість"/>
+                <Syncfusion:GridCheckBoxColumn MappingName="AvailabilityInStock" HeaderText="Наявність На складі"/>
+            </Syncfusion:SfDataGrid.Columns>
+        </Syncfusion:SfDataGrid>
 
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>

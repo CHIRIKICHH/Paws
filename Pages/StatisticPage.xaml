@@ -64,6 +64,23 @@
             <Button Content="У Excel" Grid.Column="3" Width="120" Visibility="Hidden"/>
         </Grid>
 
-        <Syncfusion:SfDataGrid Grid.Row="3" x:Name="StatsDataGrid" ColumnSizer="SizeToHeader" AllowFiltering="True" AllowResizingColumns="True" AllowSorting="True"/>
+        <Syncfusion:SfDataGrid Grid.Row="3" x:Name="EmployeeStatsDataGrid" Visibility="Hidden" ColumnSizer="Auto" AllowFiltering="True" AllowResizingColumns="True" AllowSorting="True">
+            <Syncfusion:SfDataGrid.Columns>
+                <Syncfusion:GridTextColumn MappingName="EmployeeName" HeaderText="ПІБ співробітника"/>
+                <Syncfusion:GridTextColumn MappingName="Sales" HeaderText="Продаж"/>
+                <Syncfusion:GridNumericColumn MappingName="AmountSales" HeaderText="Сума з продажу"/>
+                <Syncfusion:GridTextColumn MappingName="Status" HeaderText="Статус"/>
+            </Syncfusion:SfDataGrid.Columns>
+        </Syncfusion:SfDataGrid>
+        <Syncfusion:SfDataGrid Grid.Row="3" x:Name="OrdersStatsDataGrid" Visibility="Hidden" ColumnSizer="Auto" AllowFiltering="True" AllowResizingColumns="True" AllowSorting="True">
+            <Syncfusion:SfDataGrid.Columns>
+                <Syncfusion:GridTextColumn MappingName="QuantityOfOrders" HeaderText="Кількість замовлень"/>
+                <Syncfusion:GridTextColumn MappingName="QuantityOfSaleGoods" HeaderText="Кількість проданих товарів"/>
+                <Syncfusion:GridNumericColumn MappingName="AllOrdersSum" HeaderText="Загальна сума з продажів(₴)"/>
+                <Syncfusion:GridTextColumn MappingName="InCashCount" HeaderText="Оплата готівкою"/>
+                <Syncfusion:GridTextColumn MappingName="NonCash" HeaderText="Оплата безготівково"/>
+                <Syncfusion:GridTextColumn MappingName="ByCardCount" HeaderText="Оплата карткою"/>
+            </Syncfusion:SfDataGrid.Columns>
+        </Syncfusion:SfDataGrid>
     </Grid>
 </Page>

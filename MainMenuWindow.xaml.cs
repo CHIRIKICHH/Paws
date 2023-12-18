@@ -1,7 +1,9 @@
-﻿using Paws.Model;
+﻿using DevExpress.Mvvm.UI.Interactivity.Internal;
+using Paws.Model;
 using Paws.Pages;
 using Paws.Services;
 using System;
+using System.ComponentModel;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,15 +18,24 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using XAct;
+using System.Runtime.CompilerServices;
 
 namespace Paws
 {
     /// <summary>
     /// Логика взаимодействия для MainMenuWindow.xaml
     /// </summary>
-    public partial class MainMenuWindow : Window
+    public partial class MainMenuWindow : Window, INotifyPropertyChanged
     {
-        DispatcherTimer Timer { get; set; }
+        public event PropertyChangedEventHandler PropertyChanged;
+        private TimeSpan onlineTime;
+        private DateTime breakTime;
+        public string OnlineTime { get { return onlineTime.ToString(); } set { onlineTime = TimeSpan.Parse(value); OnPropertyChanged();} }
+        public DateTime BreakTime { get { return breakTime; } set { breakTime = value; OnPropertyChanged(); } }
+        protected void OnPropertyChanged([CallerMemberName] string name = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
         public MainMenuWindow()
         {
             InitializeComponent();
@@ -40,8 +51,18 @@ namespace Paws
                 FullPDFReportButton.IsEnabled = false;
             }
             UserStatusBox.SelectedItem = UserStatus.Online;
+
+            var loopOnlineTimer = Task.Run(async () =>
+            {
+                while(true)
+                {
+                    OnlineTime = DateTime.Now.TimeOfDay.ToString();
+                    await Task.Delay(500);
+                }
+            });
         }
 
+        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Content = new OrdersPage();

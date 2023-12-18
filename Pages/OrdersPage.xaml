@@ -16,7 +16,25 @@
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <TextBlock Text="Список замовлень" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
-        <Syncfusion:SfDataGrid x:Name="dataGrid" AutoGenerateColumns="True" Grid.Row="1" AllowSorting="True" AllowFiltering="True" AllowTriStateSorting="True" CellDoubleTapped="dataGrid_CellDoubleTapped" ColumnSizer="Auto" QueryRowHeight="datagrid_QueryRowHeight"/>
+        <Syncfusion:SfDataGrid x:Name="dataGrid" 
+                               Grid.Row="1" AllowSorting="True" 
+                               AllowFiltering="True" 
+                               AllowTriStateSorting="True" 
+                               CellDoubleTapped="dataGrid_CellDoubleTapped" 
+                               ColumnSizer="Auto" QueryRowHeight="datagrid_QueryRowHeight">
+            <Syncfusion:SfDataGrid.Columns>
+                <Syncfusion:GridTextColumn MappingName="Id" HeaderText="ID"/>
+                <Syncfusion:GridTextColumn MappingName="CustomerName" HeaderText="ПІБ клієнта"/>
+                <Syncfusion:GridTextColumn MappingName="EmployeeName" HeaderText="ПІБ співробітника"/>
+                <Syncfusion:GridTextColumn MappingName="GoodsNames" HeaderText="Список товарів"/>
+                <Syncfusion:GridDateTimeColumn MappingName="OrderDateTime" HeaderText="Дата замовлення"/>
+                <Syncfusion:GridNumericColumn MappingName="Amount" HeaderText="Сума"/>
+                <Syncfusion:GridTextColumn MappingName="DeliveryAdress" HeaderText="Адреса доставки"/>
+                <Syncfusion:GridTextColumn MappingName="PaymentMethod" HeaderText="Метод оплати"/>
+                <Syncfusion:GridTextColumn MappingName="Comment" HeaderText="Коментар"/>
+
+            </Syncfusion:SfDataGrid.Columns>
+        </Syncfusion:SfDataGrid>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>

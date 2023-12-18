@@ -15,7 +15,19 @@
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <TextBlock Text="Список Замовників" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
-        <Syncfusion:SfDataGrid x:Name="dataGrid" AutoGenerateColumns="True" Grid.Row="1" AllowSorting="True" AllowFiltering="True" CellDoubleTapped="dataGrid_CellDoubleTapped"/>
+        <Syncfusion:SfDataGrid 
+            x:Name="dataGrid" Grid.Row="1" 
+            AllowSorting="True" AllowFiltering="True" 
+            CellDoubleTapped="dataGrid_CellDoubleTapped" ColumnSizer="Auto">
+            <Syncfusion:SfDataGrid.Columns>
+                <Syncfusion:GridTextColumn MappingName="Id" HeaderText="ID"/>
+                <Syncfusion:GridTextColumn MappingName="Fullname" HeaderText="ПІБ клієнта"/>
+                <Syncfusion:GridTextColumn MappingName="Adress" HeaderText="Адрес"/>
+                <Syncfusion:GridTextColumn MappingName="Phone" HeaderText="Телефон"/>
+                <Syncfusion:GridTextColumn MappingName="Email" HeaderText="Email"/>
+                <Syncfusion:GridTextColumn MappingName="DiscountCard" HeaderText="Дисконтна карта"/>
+            </Syncfusion:SfDataGrid.Columns>
+        </Syncfusion:SfDataGrid>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>

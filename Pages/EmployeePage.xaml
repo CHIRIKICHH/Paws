@@ -23,7 +23,7 @@
             AutoGenerateColumns="False"
             >
             <Syncfusion:SfDataGrid.Columns>
-                <Syncfusion:GridNumericColumn MappingName="Id" HeaderText="ID"/>
+                <Syncfusion:GridTextColumn MappingName="Id" HeaderText="ID"/>
                 <Syncfusion:GridTextColumn MappingName="Fullname" HeaderText="ПІБ співробітника"/>
                 <Syncfusion:GridTextColumn MappingName="Position" HeaderText="Посада"/>
                 <Syncfusion:GridTextColumn MappingName="Login" HeaderText="Логiн"/>

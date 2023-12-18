@@ -63,11 +63,15 @@ namespace Paws.Pages
         {
             if (StatsTypeComboBox.SelectedItem.ToString() == "Статистика по співробітникам")
             {
-                StatsDataGrid.ItemsSource = GetStatistics();
+                EmployeeStatsDataGrid.ItemsSource = GetStatistics();
+                OrdersStatsDataGrid.Visibility = Visibility.Hidden;
+                EmployeeStatsDataGrid.Visibility = Visibility.Visible;
             }
             else
             {
-                StatsDataGrid.ItemsSource = GetSalesStats();
+                OrdersStatsDataGrid.ItemsSource = GetSalesStats();
+                OrdersStatsDataGrid.Visibility = Visibility.Visible;
+                EmployeeStatsDataGrid.Visibility = Visibility.Hidden;
             }
         }
         private List<EmployeeStats> GetStatistics()
