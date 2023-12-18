@@ -1,0 +1,64 @@
+﻿<Window x:Class="Paws.Windows.ChangeEmployee"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Paws.Windows" xmlns:Syncfusion="http://schemas.syncfusion.com/wpf"
+        mc:Ignorable="d"
+        Title="ChangeEmployee" Height="570" Width="400">
+    <Grid Width="380">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Редагування працівника" HorizontalAlignment="Center" />
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="30"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Text="ПІБ співробітника" Width="80" TextAlignment="Center" Height="30" TextWrapping="Wrap"/>
+            <TextBox Grid.Column="1" x:Name="FullNameTextBox" Width="200" Height="30"/>
+
+            <TextBlock Grid.Row="1" Text="Логін" Width="80" TextAlignment="Center" Height="30"/>
+            <TextBox Grid.Row="1" Grid.Column="1" x:Name="LoginTextBox" Width="200" Height="30"/>
+
+            <TextBlock Grid.Row="2" Text="Пароль" Width="80" TextAlignment="Center" Height="30"/>
+            <TextBox Grid.Row="2" Grid.Column="1" x:Name="PasswordTextBox" FontFamily="{StaticResource Password}" Width="200" Height="30" />
+
+            <TextBlock Grid.Row="3" Text="Повторіть Пароль" Width="80" TextAlignment="Center" Height="30" TextWrapping="Wrap"/>
+            <TextBox Grid.Row="3" Grid.Column="1" x:Name="RepeatPasswordTextBox" FontFamily="{StaticResource Password}" Width="200" Height="30" />
+
+            <TextBlock Grid.Row="4" Text="Роль в системі" TextAlignment="Center" Height="30"/>
+            <ComboBox Grid.Row="4" Grid.Column="1" x:Name="RoleComboBox" Width="200" Height="30"/>
+
+            <TextBlock Grid.Row="5" Text="Посада" Width="80" TextAlignment="Center" Height="30"/>
+            <TextBox Grid.Row="5" Grid.Column="1" x:Name="PositionTextBox" Width="200" Height="30"/>
+
+            <TextBlock Grid.Row="6" Text="Зарплата" TextAlignment="Center" TextWrapping="WrapWithOverflow" Height="30" />
+            <Syncfusion:CurrencyTextBox Grid.Row="6" Grid.Column="1" x:Name="SalaryTextBox" Height="30" Width="200" CurrencySymbol="₴" CurrencyDecimalDigits="2"/>
+
+            <TextBlock Grid.Row="7" Text="Телефон" TextAlignment="Center" TextWrapping="WrapWithOverflow" Height="30" />
+            <TextBox Grid.Row="7" Grid.Column="1" x:Name="PhoneTextBox" Height="30" Width="200"/>
+
+            <TextBlock Grid.Row="8" Text="Email" TextAlignment="Center" TextWrapping="WrapWithOverflow" Height="30" />
+            <TextBox Grid.Row="8" Grid.Column="1" x:Name="EmailTextBox" Height="30" Width="200"/>
+
+            <Button Grid.Row="9" Grid.Column="1" Content="Редагувати" Width="120" Height="30" Click="Button_Click"/>
+        </Grid>
+    </Grid>
+</Window>

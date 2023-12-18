@@ -1,0 +1,49 @@
+﻿<Window x:Class="Paws.MainMenuWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Paws"
+        mc:Ignorable="d"
+        Title="MainMenuWindow" Height="500" Width="1000" Icon="/free-icon-dog-334910.png"
+        Closing="Window_Closing"
+        >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Замовлення"  Grid.Column="0" Click="Button_Click"/>
+            <Button Content="Товар" Grid.Column="1" Click="Button_Click_1"/>
+            <Button Content="Замовник" Grid.Column="2" Click="Button_Click_2"/>
+            <Button Content="Співробітник" x:Name="SuppliersButton" Grid.Column="3" Click="Button_Click_3"/>
+            <Button Content="Статистика" x:Name="StatsButton" Grid.Column="4" Click="StatsButton_Click"/>
+            <Button Content="Повний звіт" x:Name="FullPDFReportButton" Grid.Column="5" Click="Button_Click_4"/>
+
+        </Grid>
+        <Frame Grid.Row="1" x:Name="MainFrame" Content="OrdersPage" NavigationUIVisibility="Hidden"/>
+        <Grid Grid.Row="3" Margin="0 10 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="400"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <ComboBox Width="200" Grid.Column="0" x:Name="UserStatusBox" SelectionChanged="UserStatusBox_SelectionChanged"/>
+            <StackPanel Grid.Column="1" Orientation="Horizontal" Visibility="Hidden">
+                <Label x:Name="OnlineTimer" Content="Час роботи: 00:00" Width="200"/>
+                <Label x:Name="BreakTimer" Content="Час перерви: 00:00" Width="200"/>
+            </StackPanel>
+            <Label x:Name="CurrentUser" Content="User" Grid.Column="2" HorizontalAlignment="Center"/>
+        </Grid>
+    </Grid>
+</Window>

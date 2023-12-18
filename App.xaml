@@ -1,0 +1,11 @@
+﻿<Application x:Class="Paws.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Paws"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <FontFamily x:Key="Password">pack://application:,,,/Resources/#password</FontFamily>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

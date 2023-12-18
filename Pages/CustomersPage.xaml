@@ -1,0 +1,39 @@
+﻿<Page x:Class="Paws.Pages.CustomersPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Paws.Pages" xmlns:Syncfusion="http://schemas.syncfusion.com/wpf"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CustomersPage">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Список Замовників" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
+        <Syncfusion:SfDataGrid x:Name="dataGrid" AutoGenerateColumns="True" Grid.Row="1" AllowSorting="True" AllowFiltering="True" CellDoubleTapped="dataGrid_CellDoubleTapped"/>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="Додати" Click="Button_Click"/>
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" x:Name="ChangePanel">
+
+                <TextBox Width="50" x:Name="ChangeTextBox" FontSize="14" FontWeight="DemiBold"/>
+                <Button Content="Редагувати" Width="100" Click="Button_Click_1" x:Name="ChangeButton"/>
+            </StackPanel>
+            <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center" x:Name="RemovePanel">
+                <TextBox Width="50" x:Name="RemoveTextBox" FontSize="14" FontWeight="DemiBold"/>
+                <Button Content="Видалити" Width="100" Click="Button_Click_2" x:Name="RemoveButton"/>
+            </StackPanel>
+            <Button Grid.Column="3" Content="Звіт у PDF" Click="Button_Click_3"/>
+        </Grid>
+    </Grid>
+</Page>
