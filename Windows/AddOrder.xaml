@@ -41,10 +41,9 @@
 
             <TextBlock Grid.Row="2" Text="Список товарів" TextAlignment="Center" VerticalAlignment="Center"/>
             <Syncfusion:ComboBoxAdv Grid.Row="2" Grid.Column="1" x:Name="GoodsList" 
-                                    EnableOKCancel="True" AllowSelectAll="True" 
+                                    EnableOKCancel="True" AllowSelectAll="True" AllowMultiSelect="True" 
                                     Width="200" Height="30" DefaultText="Вибраний: 0" 
-                                    SelectionChanged="GoodsList_SelectionChanged" 
-                                    AutoCompleteMode="Suggest" IsEditable="True" IsTextSearchCaseSensitive="True" IsTextSearchEnabled="True"/>
+                                    SelectionChanged="GoodsList_SelectionChanged"/>
 
             <TextBlock Grid.Row="3" Text="Адрес доставки" Width="90" TextAlignment="Center" Height="30"/>
             <TextBox Grid.Row="3" Grid.Column="1" x:Name="DeliveryAdressTextBox" Width="200" Height="50" TextWrapping="Wrap"/>
