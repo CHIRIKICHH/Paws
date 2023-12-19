@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,28 +16,18 @@ namespace Paws.Services
             try
             {
                 string clientMail = order.Customer.Email;
-                string replyMail = "normchel66@gmail.com";
-                string myEMail = "pawsomepets@ic.gl";
-                string pass = "Interactive2023";
+                string myEMail = "bohdan.lozenko@nure.ua";
+                string pass = "zikf qyry cdzp rkca";
 
-                SmtpClient mySmtpClient = new SmtpClient();
-                mySmtpClient.Host = "smtp.yandex.ru";
-                mySmtpClient.Port = 587;
+                SmtpClient mySmtpClient = new SmtpClient("smtp.gmail.com", 587);
+                mySmtpClient.Credentials = new NetworkCredential(myEMail, pass);
                 mySmtpClient.EnableSsl = true;
-                // set smtp-client with basicAuthentication
-                mySmtpClient.UseDefaultCredentials = false;
-                System.Net.NetworkCredential basicAuthenticationInfo = new
-                   System.Net.NetworkCredential(myEMail, pass);
-                mySmtpClient.Credentials = basicAuthenticationInfo;
 
                 // add from,to mailaddresses
                 MailAddress from = new MailAddress(myEMail);
                 MailAddress to = new MailAddress(clientMail);
                 MailMessage myMail = new System.Net.Mail.MailMessage(from, to);
 
-                // add ReplyTo
-                MailAddress replyTo = new MailAddress(replyMail);
-                myMail.ReplyToList.Add(replyTo);
 
                 // set subject and encoding
                 myMail.Subject = $"Чек замовлення №{order.Id}";
