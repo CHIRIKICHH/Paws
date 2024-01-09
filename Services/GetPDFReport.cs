@@ -61,6 +61,7 @@ namespace Paws.Services
                     doc.Add(new Phrase("Нижче надано список замовлень внесених до бази даних системи управління Зоомагазином PawsomePets", font));
                     doc.Add(table);
                     doc.Add(new Phrase($"Всього замовлень: {context.Goods.Count()}", font));
+                    
 
                     doc.Add(Chunk.NEXTPAGE);
 
@@ -134,7 +135,11 @@ namespace Paws.Services
                     doc.Add(new Phrase("Звіт \"Клієнти компанії PawsomePets\"\n", font));
                     doc.Add(new Phrase("Нижче надано список клієнтів компанії PawsomePets, внесених в базу даних системи управління", font));
                     doc.Add(table);
-                    doc.Add(new Phrase($"Всього клієнтів: {context.Customers.Count()}", font));
+                    doc.Add(new Phrase($"Всього клієнтів: {context.Customers.Count()}\n", font));
+                    
+                    doc.Add(new Phrase($"Дата генерації звіту: {DateTime.Now}", font));
+
+
                 }
                 doc.Close();
                 return "Повний звіт успішно збережений!";
@@ -181,7 +186,8 @@ namespace Paws.Services
                     doc.Add(new Phrase("Звіт \"Замовлення в базі даних\"\n", font));
                     doc.Add(new Phrase("Нижче надано список замовлень внесених до бази даних системи управління Зоомагазином PawsomePets", font));
                     doc.Add(table);
-                    doc.Add(new Phrase($"Всього замовлень: {context.Goods.Count()}", font));
+                    doc.Add(new Phrase($"Всього замовлень: {context.Goods.Count()}\n", font));
+                    doc.Add(new Phrase($"Дата генерації звіту: {DateTime.Now}", font));
                 }
                 doc.Close();
                 return "Звіт по замовленнях успішно збережений!";
@@ -224,7 +230,8 @@ namespace Paws.Services
                     doc.Add(new Phrase("Звіт \"Товари в базі даних\"\n", font));
                     doc.Add(new Phrase("Нижче надано список товарів внесених до бази даних системи управління Зоомагазином PawsomePets", font));
                     doc.Add(table);
-                    doc.Add(new Phrase($"Всього товарів: {context.Goods.Count()}", font));
+                    doc.Add(new Phrase($"Всього товарів: {context.Goods.Count()}\n", font));
+                    doc.Add(new Phrase($"Дата генерації звіту: {DateTime.Now}", font));
                 }
                 doc.Close();
                 return "Звіт по товарах успішно збережено!";
@@ -268,7 +275,8 @@ namespace Paws.Services
                     doc.Add(new Phrase("Звіт \"Співробітники PawsomePets\"\n", font));
                     doc.Add(new Phrase("Нижче надано список співробітників компанії PawsomePets, внесених в базу даних системи управління", font));
                     doc.Add(table);
-                    doc.Add(new Phrase($"Всього співробітників: {context.Employees.Count()}", font));
+                    doc.Add(new Phrase($"Всього співробітників: {context.Employees.Count()}\n", font));
+                    doc.Add(new Phrase($"Дата генерації звіту: {DateTime.Now}", font));
                 }
                 doc.Close();
                 return "Звіт по співробітникам успішно збережений!";
@@ -312,7 +320,8 @@ namespace Paws.Services
                     doc.Add(new Phrase("Звіт \"Клієнти компанії PawsomePets\"\n", font));
                     doc.Add(new Phrase("Нижче надано список клієнтів компанії PawsomePets, внесених в базу даних системи управління", font));
                     doc.Add(table);
-                    doc.Add(new Phrase($"Всього клієнтів: {context.Customers.Count()}", font));
+                    doc.Add(new Phrase($"Всього клієнтів: {context.Customers.Count()}\n", font));
+                    doc.Add(new Phrase($"Дата генерації звіту: {DateTime.Now}", font));
                 }
                 doc.Close();
                 return "Звіт по клієнтам успішно збережений!";
@@ -332,7 +341,7 @@ namespace Paws.Services
             SaveFileDialog dialog = new SaveFileDialog();
             dialog.Filter = "PDF File (*.pdf)|*.pdf|Все файлы(*.*)|*.*";
             dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            dialog.FileName = "Report";
+            dialog.FileName = $"Report";
             if (dialog.ShowDialog().Value == true)
             {
                 PdfWriter.GetInstance(doc, new FileStream(dialog.FileName, FileMode.Create));

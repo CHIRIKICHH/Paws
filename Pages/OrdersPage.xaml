@@ -45,8 +45,8 @@
             <Button Grid.Column="0" Content="Додати" Click="Button_Click"/>
             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
                 
-                <TextBox Width="50" x:Name="ChangeTextBox" IsEnabled="False"/>
-                <Button Content="Редагувати" Width="100" Click="Button_Click_2" IsEnabled="False" x:Name="ChangeButton"/>
+                <TextBox Width="50" x:Name="ChangeTextBox" IsEnabled="False" Visibility="Hidden"/>
+                <Button Content="Редагувати" Width="100" Click="Button_Click_2" IsEnabled="False" x:Name="ChangeButton" Visibility="Hidden"/>
             </StackPanel>
             <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBox Width="50" x:Name="RemoveTextBox"/>

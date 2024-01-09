@@ -39,10 +39,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <ComboBox Width="200" Grid.Column="0" x:Name="UserStatusBox" SelectionChanged="UserStatusBox_SelectionChanged"/>
-            <StackPanel Grid.Column="1" Orientation="Horizontal">
-                <Label x:Name="OnlineTimer" Content="{Binding OnlineTime}" Width="200"/>
-                <Label x:Name="BreakTimer" Content="Час перерви: 00:00" Width="200"/>
-            </StackPanel>
+            
             <Label x:Name="CurrentUser" Content="User" Grid.Column="2" HorizontalAlignment="Center"/>
         </Grid>
     </Grid>
