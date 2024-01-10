@@ -23,13 +23,17 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <StackPanel Grid.Column="0">
+            <StackPanel Grid.Column="0" Visibility="Visible">
                 <Label Content="Період і параметри"/>
                 <RadioButton Content="За сьогодні" x:Name="TodayRadioButton" IsChecked="True" Checked="RadioButton_Checked"/>
                 <RadioButton Content="За вчора" Checked="RadioButton_Checked"/>
                 <RadioButton Content="За 3 дні" Checked="RadioButton_Checked"/>
                 <RadioButton Content="За тиждень" Checked="RadioButton_Checked"/>
                 <RadioButton Content="За період" Checked="RadioButton_Checked"/>
+            </StackPanel>
+
+            <StackPanel Visibility="Visible" Grid.Column="1" Width="200">
+                <Syncfusion:CalendarEdit Name="YearsCalendar" Visibility="Hidden" DisableDateSelection="True" ViewMode="Years" VisualMode="Years"  Height="150" TodayRowIsVisible="True"   />
             </StackPanel>
             <Grid Grid.Column="1" Visibility="Hidden" x:Name="SelectDateGrid">
                 <Grid.RowDefinitions>
@@ -56,7 +60,7 @@
             </Grid.ColumnDefinitions>
             <StackPanel Orientation="Horizontal">
                 <Label Content="Тип статистики" VerticalAlignment="Center"/>
-                <ComboBox Width="180" Height="25" x:Name="StatsTypeComboBox"/>
+                <ComboBox Width="180" Height="25" x:Name="StatsTypeComboBox" SelectionChanged="StatsTypeComboBox_SelectionChanged"/>
             </StackPanel>
 
             <Button Content="Завантажити" Width="120" Grid.Column="1" Click="Button_Click"/>
@@ -80,6 +84,24 @@
                 <Syncfusion:GridTextColumn MappingName="InCashCount" HeaderText="Оплата готівкою"/>
                 <Syncfusion:GridTextColumn MappingName="NonCash" HeaderText="Оплата безготівково"/>
                 <Syncfusion:GridTextColumn MappingName="ByCardCount" HeaderText="Оплата карткою"/>
+            </Syncfusion:SfDataGrid.Columns>
+        </Syncfusion:SfDataGrid>
+        <Syncfusion:SfDataGrid Grid.Row="3" x:Name="ClientStatsDataGrid" Visibility="Hidden" ColumnSizer="Auto" AllowFiltering="True" AllowResizingColumns="True" AllowSorting="True">
+            <Syncfusion:SfDataGrid.Columns>
+                <Syncfusion:GridTextColumn MappingName="CustomerName" HeaderText="ПІБ клієнта"/>
+                <Syncfusion:GridTextColumn MappingName="Orders" HeaderText="Кількість оформлених замовлень"/>
+                <Syncfusion:GridTextColumn MappingName="Goods" HeaderText="Кількість куплених товарів"/>
+                <Syncfusion:GridNumericColumn MappingName="AmountOrders" HeaderText="Загальна сума з продажів(₴)"/>
+            </Syncfusion:SfDataGrid.Columns>
+        </Syncfusion:SfDataGrid>
+
+        <Syncfusion:SfDataGrid Grid.Row="3" Visibility="Hidden" x:Name="YearStatsDataGrid" ShowRowHeader="True" ColumnSizer="Auto" AllowFiltering="True" AllowResizingColumns="True" AllowSorting="True">
+            <Syncfusion:SfDataGrid.Columns>
+                <Syncfusion:GridTextColumn MappingName="MounthCount" HeaderText="Номер місяця"/>
+                <Syncfusion:GridTextColumn MappingName="Mounth" HeaderText="Місяць"/>
+                <Syncfusion:GridTextColumn MappingName="OrdersCount" HeaderText="Кількість оформлених замовлень"/>
+                <Syncfusion:GridTextColumn MappingName="GoodsCount" HeaderText="Кількість куплених товарів"/>
+                <Syncfusion:GridNumericColumn MappingName="Cost" HeaderText="Загальна сума з продажів(₴)"/>
             </Syncfusion:SfDataGrid.Columns>
         </Syncfusion:SfDataGrid>
     </Grid>
